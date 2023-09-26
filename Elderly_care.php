@@ -1,3 +1,4 @@
+<?php include "vitalsfit/check.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
