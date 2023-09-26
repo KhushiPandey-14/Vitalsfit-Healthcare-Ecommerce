@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <title>Health Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"><a href="index.php"><img src="Images/logo.jpg" height="90px" width="150px"></a></div>
+    <form id="healthQuizForm">
+        <label>1. What is the recommended daily intake of water for an average adult?</label>
+        <input type="radio" name="q1" value="a" required> a) 2 liters<br>
+        <input type="radio" name="q1" value="b"> b) 4 liters<br>
+        <input type="radio" name="q1" value="c"> c) 8 liters<br>
+        <input type="radio" name="q1" value="d"> d) 10 liters<br>
+        <br>
+
+        <label>2.How many hours of sleep are recommended for adults each night?</label>
+        <input type="radio" name="q2" value="a" required> a)5 hours<br>
+        <input type="radio" name="q2" value="b"> b) 6 hours<br>
+        <input type="radio" name="q2" value="c"> c) 8 hours<br>
+        <input type="radio" name="q2" value="d"> d) 10 hours <br>
+        <br>
+
+        <label>3.Which vitamin is commonly known as the "sunshine vitamin"?</label>
+        <input type="radio" name="q3" value="a" required> a)Vitamin C<br>
+        <input type="radio" name="q3" value="b"> b) Vitamin D<br>
+        <input type="radio" name="q3" value="c"> c) Vitamin A<br>
+        <input type="radio" name="q3" value="d"> d) Vitamin B12 <br>
+        <br>
+
+        <label>4.True or false: Regular exercise can help reduce the risk of chronic diseases like diabetes and heart disease.?</label>
+        <input type="radio" name="q4" value="a" required> a)True<br>
+        <input type="radio" name="q4" value="b"> b) False<br>
+        <br>
+
+        <label>5.What is the normal range for a healthy blood pressure reading?</label>
+        <input type="radio" name="q5" value="a" required> a)130/70<br>
+        <input type="radio" name="q5" value="b"> b)140/60<br>
+        <input type="radio" name="q5" value="c"> c)100/90<br>
+        <input type="radio" name="q5" value="d"> d)120/80 <br>
+        <br>
+        
+        <!-- Add more questions here -->
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("healthQuizForm").onsubmit = function (event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+
+            // Calculate the score (you can customize the answers based on the correct ones)
+            let s = 5;
+
+            //for question 1
+            if (formData.get("q1") === "b") {
+               score=s; 
+            }
+            
+            
+            else{
+                s--;
+                score=s;
+            }
+              
+            //for question 2
+            
+            if (formData.get("q2") === "c") {
+              score=s;
+            }
+            
+
+            else{
+                s--;
+                score=s;
+            }  
+            
+            //for question 3
+            if (formData.get("q3") === "b") {
+               score=s;
+            }
+             
+            
+            else{
+                s--;
+                score=s;
+            }   
+            
+            //for question 4
+            if (formData.get("q4") === "a") {
+               score=s; 
+            }
+            
+            
+            else{
+                s--;
+                score=s;
+            }   
+            
+            //for question 5
+            if (formData.get("q5") === "d") {
+               score=s; 
+            }
+            
+            
+            else{
+                s--;
+                score=s;
+            }
+
+
+            
+
+            // Add more scoring logic for other questions
+
+            // Display the result
+            alert(`Your score is: ${score}`);
+            form.reset();
+        };
+    </script>
+</body>
+</html>
